@@ -20,8 +20,8 @@ export class FlappyBird extends ObjectBase<FlappyBirdConfigInterface> {
       positionX: 10,
       positionY: window.screen.height / 3,
       currentFrame: 0,
-      jump: 4.6,
-      gravid: 0.25,
+      jump: 3.6,
+      gravid: 0.15,
       speed: 0,
       movements: [
         {spriteX: 0, spriteY: 0,},
