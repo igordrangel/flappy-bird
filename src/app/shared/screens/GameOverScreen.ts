@@ -16,5 +16,6 @@ export class GameOverScreen extends ScreenBase {
 
   click() {
     Screens.changeScreen(Screens.start);
+    Screens.frames = 0;
   }
 }

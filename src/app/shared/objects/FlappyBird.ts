@@ -33,6 +33,7 @@ export class FlappyBird extends ObjectBase<FlappyBirdConfigInterface> {
   }
 
   public jump() {
+    Scenario.audioJump.play().then();
     this.config.speed =  - this.config.jump;
   }
 
@@ -56,8 +57,14 @@ export class FlappyBird extends ObjectBase<FlappyBirdConfigInterface> {
       return;
     }
 
+    const positionYBefore = this.config.positionY;
     this.config.speed += this.config.gravid;
     this.config.positionY += this.config.speed;
+    const positionYAfter = this.config.positionY;
+
+    if (positionYAfter > positionYBefore + 5) {
+      Scenario.audioFell.play().then();
+    }
   }
 
   protected updateCurrentFrame(frames: number) {

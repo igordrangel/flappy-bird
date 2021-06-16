@@ -10,6 +10,9 @@ import { GameOver } from './GameOver';
 
 export class Scenario {
   public static audioHit = new Audio('./assets/efeitos/hit.wav');
+  public static audioJump = new Audio('./assets/efeitos/pulo.wav');
+  public static audioScore = new Audio('./assets/efeitos/ponto.wav');
+  public static audioFell = new Audio('./assets/efeitos/caiu.wav');
   public static ground: Ground;
   public static flappyBird: FlappyBird;
   public static pipe: Pipe;

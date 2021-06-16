@@ -104,9 +104,9 @@ export class Pipe extends ObjectBase<PipeConfigInterface> {
 
   private hasColitionWithFlappyBird(par: PipeParInterface) {
     const headFlappyBird = Scenario.flappyBird.config.positionY;
-    const footFlappyBird = Scenario.flappyBird.config.positionY + Scenario.flappyBird.config.height;
+    const footFlappyBird = Scenario.flappyBird.config.positionY + (Scenario.flappyBird.config.height - 8);
 
-    if((Scenario.flappyBird.config.positionX + Scenario.flappyBird.config.width) >= par.positionX) {
+    if((Scenario.flappyBird.config.positionX + (Scenario.flappyBird.config.width - 8)) >= par.positionX) {
       if(headFlappyBird <= par.skyPipe.positionY) {
         return true;
       }

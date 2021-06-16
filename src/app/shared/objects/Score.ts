@@ -22,11 +22,14 @@ export class Score extends ObjectBase<ScoreConfigInterface> {
   }
 
   update() {
-    const intervalFrames = 20;
-    const pastInterval = Screens.frames % intervalFrames === 0;
+    if (Screens.frames > 250) {
+      const intervalFrames = 100;
+      const pastInterval = Screens.frames % intervalFrames === 0;
 
-    if(pastInterval) {
-      this.config.score += 1;
+      if (pastInterval) {
+        this.config.score += 10;
+        Scenario.audioScore.play().then();
+      }
     }
   }
 }
